@@ -1,7 +1,7 @@
 import  Express, {Application, Request, Response}  from "express"; 
-const app : Application = Express();
+const App : Application = Express();
 
 
-app.use("/Test",(req : Request,res:Response)=>{res.send("<h1>Test</h1>")});
+App.use("/Test",(req : Request,res:Response)=>{res.send("<h1>Test</h1>")});
 
-module.exports = app;
+module.exports = App;

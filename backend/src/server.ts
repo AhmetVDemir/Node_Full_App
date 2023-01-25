@@ -1,5 +1,6 @@
-const app = require("../src/app");
+import { Application } from "express";
+const App : Application = require("../src/app");
 
-app.set("PORT",5003);
+App.set("PORT",5003);
 
-app.listen(app.get("PORT"),()=>{console.log("Çalışmaya başladı");});
+App.listen(App.get("PORT"),()=>{console.log("Çalışmaya başladı");});
