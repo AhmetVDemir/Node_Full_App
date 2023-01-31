@@ -5,9 +5,15 @@ import Detail from "./pages/Detail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageContainer from "./containers/PageContainer";
+import { useSelector } from "react-redux";
+import Cart from "./components/Cart";
 
 
 const App = () => {
+
+  const {drawer} = useSelector((state:any) => state.drawer)
+
+
   return (
     <>
       <PageContainer>
@@ -17,6 +23,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/detail/:id" element={<Detail />} />
           </Routes>
+          {drawer && <Cart />}
           <Footer />
         </BrowserRouter>
 
