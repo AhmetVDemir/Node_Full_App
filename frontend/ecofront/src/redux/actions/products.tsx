@@ -1,8 +1,13 @@
+import { Dispatch } from "react";
+import { AnyAction } from "redux";
+import store from "../store";
 
 
-export const productAction = () => async (dispatch: any) => {
+export const productAction :Dispatch<AnyAction> = () => async () => {
     const data = await fetch('https://fakestoreapi.com/products')
         .then(res => res.json());
         
-        dispatch({type:"GET_PRODUCTS",payload:data});
+    console.log("Products tan : \n----------------------------------------------------------\n" + data + "\n---------------------------------------------------------\n");
+        
+        store.dispatch({type:"GET_PRODUCTS",payload:data});
 }
