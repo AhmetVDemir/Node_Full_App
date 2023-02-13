@@ -1,17 +1,17 @@
-const Mongoose = require('mongoose');
+import mongoose, { Document, Schema } from "mongoose";
 
-import { Date } from "mongoose";
-
-/*
-interface Article {
-    Header : String;
-    Description : String;
-    Article:String,
-    Date: Date,
+export interface IArticle {
+    
+    Header: string
 }
 
-class ArticleType<Article> {};
+export interface IArticleModel extends IArticle, Document {
 
-const ArticleSchema = new Mongoose.Schema(ArticleType);
+}
 
-*/
+const ArticleSchema: Schema = new Schema({
+    Header: { type: String}
+},
+    { versionKey: false });
+
+export default mongoose.model<IArticleModel>('Articles',ArticleSchema);
