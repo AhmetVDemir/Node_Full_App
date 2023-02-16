@@ -13,19 +13,19 @@ const Navbar = () => {
             </div>
             <ul className='md:flex md:items-center md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500'>
                 <li className='mx-4 my-6 md:my-0'>
-                    <a href="#" className='text-xl  hover:text-cyan-500 duration-500'>Ana Sayfa</a>
+                    <a href="#" className='text-xl  hover:text-yellow-500 duration-500'>Ana Sayfa</a>
                 </li>
 
                 <li className='mx-4 my-6 md:my-0'>
-                    <a href="#" className='text-xl  hover:text-cyan-500 duration-500'>Makaleler</a>
+                    <a href="#" className='text-xl  hover:text-yellow-500 duration-500'>Makaleler</a>
                 </li>
 
                 <li className='mx-4 my-6 md:my-0'>
-                    <a href="#" className='text-xl  hover:text-cyan-500 duration-500'>Hakkımızda</a>
+                    <a href="#" className='text-xl  hover:text-yellow-500 duration-500'>Hakkımızda</a>
                 </li>
 
                 <li className='mx-4 my-6 md:my-0'>
-                    <a href="#" className='text-xl  hover:text-cyan-500 duration-500'>İletişim</a>
+                    <a href="#" className='text-xl  hover:text-yellow-500 duration-500'>İletişim</a>
                 </li>
             </ul>
 
