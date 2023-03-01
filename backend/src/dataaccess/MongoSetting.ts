@@ -1,22 +1,37 @@
+
+//#region Imports
+
 require('dotenv').config();
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
+//#endregion
+
+
+//#region App
+
+const ConnectionString : string = process.env.CONNECTION_STRING?.toString() || "";
 
 class DbConnection {
     constructor() {
-        this.connect();
+        this.Connect();
     }
-    connect() {
+    Connect() {
         mongoose.set('strictQuery', true)
-        mongoose.connect(process.env.CONNECTION_STRING)
+        mongoose.connect(ConnectionString)
             .then(() => {
-                console.log("Veritabanı bağlantısı sağlandı !");
+                console.log("Database connection is Successful !");
             })
-            .catch((error:any) => {
-                console.error("Veritabanı bağlantı hatası !");
-                console.log(error);
+            .catch((Error:any) => {
+                console.error("Connection Error ! error : \n" + Error +"\n");
             });
     }
 }
+
+//#endregion
+
+
+
+
 
 
 

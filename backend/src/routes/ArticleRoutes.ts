@@ -1,8 +1,20 @@
+//#region Imports
+
 import express, { Router } from "express";
 import ArticleController from "../api/ArticleController";
 
-export const ArticleRouter : Router = express.Router();
+//#endregion
 
-ArticleRouter.post("/AddArticle",ArticleController.AddArticle);
+//#region Constructers
 
-module.exports = ArticleRouter;
+const ArticleRouter: Router = express.Router();
+
+//#endregion
+
+//#region Routes
+
+ArticleRouter.post("/AddArticle", ArticleController.AddArticle);
+
+//#endregion
+
+export { ArticleRouter } 

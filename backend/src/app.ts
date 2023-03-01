@@ -10,7 +10,7 @@ import { ArticleRouter } from '../src/routes/ArticleRoutes';
 
 //#region Constructers
 
-export const App: Application = Express();
+const App: Application = Express();
 
 //#endregion
 
@@ -21,9 +21,10 @@ App.use(BodyParser.json());
 
 
 App.use("/api/Test", (req: Request, res: Response) => { res.send("<h1>Test Ettik</h1>") });
+
 App.use("/api/articles", ArticleRouter);
 
 //#endregion
 
 
-module.exports = App;
+export { App };

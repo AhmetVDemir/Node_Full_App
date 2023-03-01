@@ -2,22 +2,18 @@ import { NextFunction,Request,Response } from "express";
 import mongoose, { mongo } from "mongoose";
 import Article from "../models/Article";
 
-const AddArticle =  (req : Request, res: Response) => {
+import ArticleService from "../services/ArticlesService";
 
-    const Header = req.body.Header;
 
-    console.log(req.body);
-
-    
-    const yazi = new Article({
-        _id: new mongoose.Types.ObjectId(),
-        Header:String,
-        Body:String
-    
-    })
-
-    return yazi.save().then(yazi => res.json(yazi)).catch(error => console.log(error));
-    
+const AddArticle = (req:Request,res:Response) => {
+    ArticleService.AddArticle(req.body,(item:any)=>{
+        if(!item.result){
+            console.log(item.result);
+        }
+        return res.json(item);
+    });
 }
+
+
 
 export default {AddArticle};

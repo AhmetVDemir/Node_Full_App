@@ -1,12 +1,23 @@
 
+//#region Imports
+import  {App}  from '../src/App';
+import {DbConnection} from '../src/dataaccess/MongoSetting';
 require('dotenv').config();
 
-const {DbConnection} = require('./dataaccess/MongoSetting');
+//#endregion
 
-import { App } from '../src/App.ts'; 
 
+//#region Constructers
 
 new DbConnection();
-App.set("PORT",process.env.PORT);
 
-App.listen(App.get("PORT"),()=>{console.log("Çalışmaya başladı : " + App.get("PORT") );});
+App.set("PORT",process.env.PORT)
+
+//#endregion
+
+//#region Middlewares and Routes
+
+
+App.listen(App.get("PORT"),()=>{console.log("The server started , Port is : " + App.get("PORT") );});
+
+//#endregion
