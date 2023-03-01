@@ -1,8 +1,9 @@
-import { Application } from "express";
+
 require('dotenv').config();
 
 const {DbConnection} = require('./dataaccess/MongoSetting');
-const App : Application = require("../src/app");
+
+import { App } from '../src/App.ts'; 
 
 
 new DbConnection();
