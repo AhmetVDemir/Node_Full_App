@@ -9,6 +9,7 @@ import Users, { IUserModel, IUser } from '../models/User'
 
 class UserService{
 
+    //Register
     public static AddUser(UserModel:IUser,cb:Function){
         new Users(UserModel).save(function(error:CallbackError,res:IUserModel){
             if(error){
@@ -19,6 +20,24 @@ class UserService{
             }
         });
     }
+
+    public static GetUserByEmail(UserEmail:string,cb:Function){}
+
+    public static GetAllUser(cb:Function){}
+
+    public static UpdateUser(UserModel:IUser,cb:Function){}
+
+    public static DeleteUser(UserModel:IUser,cb:Function){}
+
+    public static Login(cb:Function){}
+
+    //Yetki ve Oturum kontrolü
+    public static Verify(){}
+
+    public static ForgatPassword(UserEmail:string,cb:Function){}
+
+    public static EmailApprove(UserEmail:string,cb:Function){}
+
 
 
 }
