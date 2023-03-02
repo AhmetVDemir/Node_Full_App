@@ -1,11 +1,10 @@
 //#region Imports
 
 import { CallbackError } from 'mongoose';
-import Articles, { IArticleModel } from '../models/Article'
+import Articles, { IArticleModel,IArticle } from '../models/Article'
 
 //#endregion
 
-import { IArticle } from "../models/Article";
 
 //#region  Bussiness Service
 
