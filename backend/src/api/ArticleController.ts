@@ -13,6 +13,15 @@ const AddArticle = (req: Request, res: Response) => {
         return res.json(item);
     });
 }
+
+const GetAllArticles = (req: Request, res: Response) => {
+    ArticleService.GetAllArticles((item:any)=>{
+        if (!item.result) {
+            console.log(item.result);
+        }
+        return res.json(item);
+    });
+}
 //#endregion
 
 
@@ -20,4 +29,4 @@ const AddArticle = (req: Request, res: Response) => {
 
 
 
-export default { AddArticle };
+export default { AddArticle , GetAllArticles};

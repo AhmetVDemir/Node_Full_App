@@ -13,6 +13,7 @@ const ArticleRouter: Router = express.Router();
 
 //#region Routes
 
+ArticleRouter.get("/GetAllArticles",ArticleController.GetAllArticles);
 ArticleRouter.post("/AddArticle", ArticleController.AddArticle);
 
 //#endregion
