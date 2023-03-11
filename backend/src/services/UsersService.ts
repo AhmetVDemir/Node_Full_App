@@ -7,36 +7,44 @@ import Users, { IUserModel, IUser } from '../models/User'
 
 //#region  Bussiness Service
 
-class UserService{
+class UserService {
 
     //Register
-    public static AddUser(UserModel:IUser,cb:Function){
-        new Users(UserModel).save(function(error:CallbackError,res:IUserModel){
-            if(error){
-                return cb({result: false, message: 'Kullanıcı kayıt edilirken hata oluştu' })
+    public static AddUser(UserModel: IUser, cb: Function) {
+        new Users(UserModel).save(function (error: CallbackError, res: IUserModel) {
+            if (error) {
+                return cb({ result: false, message: 'Kullanıcı kayıt edilirken hata oluştu' })
             }
-            else{
-                return cb({result: true, message: 'kullanıcı kayıt edildi',data:res });
+            else {
+                return cb({ result: true, message: 'Kullanıcı kayıt edildi', data: res });
             }
         });
     }
 
-    public static GetUserByEmail(UserEmail:string,cb:Function){}
+    public static GetAllUser(cb: Function) {
+        Users.find({}, (error: CallbackError, res: Array<IUserModel>) => {
+            if (error) {
+                return cb({ result: false, message: 'Kullanıcı kayıtları getirilirken hata oluştu' })
+            } else {
+                return cb({ result: true, message: 'Kullanıcı kayıtları getirildi', data: res });
+            }
+        });
+    }
 
-    public static GetAllUser(cb:Function){}
+    public static GetUserByEmail(UserEmail: string, cb: Function) { }
 
-    public static UpdateUser(UserModel:IUser,cb:Function){}
+    public static UpdateUser(UserModel: IUser, cb: Function) { }
 
-    public static DeleteUser(UserModel:IUser,cb:Function){}
+    public static DeleteUser(UserModel: IUser, cb: Function) { }
 
-    public static Login(cb:Function){}
+    public static Login(cb: Function) { }
 
     //Yetki ve Oturum kontrolü
-    public static Verify(){}
+    public static Verify() { }
 
-    public static ForgatPassword(UserEmail:string,cb:Function){}
+    public static ForgatPassword(UserEmail: string, cb: Function) { }
 
-    public static EmailApprove(UserEmail:string,cb:Function){}
+    public static EmailApprove(UserEmail: string, cb: Function) { }
 
 
 

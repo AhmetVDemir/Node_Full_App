@@ -16,6 +16,15 @@ const AddUser = (req: Request, res: Response) => {
     });
 }
 
+const GettAllCustomer = (req:Request,res:Response) => {
+    UserService.GetAllUser((item:any)=> {
+        if(!item.result){
+            console.log(item.result);
+        }
+        return res.json(item);
+    });
+}
+
 //#endregion
 
-export default { AddUser };
+export default { AddUser, GettAllCustomer };
