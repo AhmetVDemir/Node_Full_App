@@ -14,7 +14,7 @@ const UserRouter: Router = express.Router();
 
 //#region Routes
 
-UserRouter.get("/AddArticle", UserController.AddUser);
+UserRouter.post("/AddUser", UserController.AddUser);
 UserRouter.get("/GetAllUser",UserController.GettAllCustomer);
 
 //#endregion

@@ -11,6 +11,16 @@ class UserService {
 
     //Register
     public static AddUser(UserModel: IUser, cb: Function) {
+
+        Users.find({ Email: UserModel.Email }).then((item) => {
+            if(item != null){
+                console.log("Malesef email adresi kayıtlı başka bir email adresi al");
+            }else {console.log("Bu email boştur kaydet")}
+        }).catch((err) => {
+            return cb({ result: false, message: 'Email kontrol edilirken hata oluştu', error: err });
+        })
+        /*
+
         new Users(UserModel).save(function (error: CallbackError, res: IUserModel) {
             if (error) {
                 return cb({ result: false, message: 'Kullanıcı kayıt edilirken hata oluştu' })
@@ -19,6 +29,7 @@ class UserService {
                 return cb({ result: true, message: 'Kullanıcı kayıt edildi', data: res });
             }
         });
+        */
     }
 
     public static GetAllUser(cb: Function) {
