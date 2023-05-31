@@ -1,8 +1,4 @@
-//#region Imports
 import bcrypt from 'bcrypt'
-//#endregion
-
-//#region Classes
 
 const saltRound = 10;
 
@@ -17,5 +13,3 @@ export class Cryptography {
         return result;
     }
 }
-
-//#endregion

@@ -1,12 +1,7 @@
 
-//#region Imports
-
 import mongoose, { Date, Document, Schema } from "mongoose";
 import { ArticleStatus } from "./Enums";
 
-//#endregion
-
-//#region Model
 
 export interface IArticle {
     Header: string,
@@ -19,9 +14,7 @@ export interface IArticleModel extends IArticle, Document {
 
 }
 
-//#endregion
 
-//#region Schema
 
 const ArticlesSchema: Schema = new Schema({
     Header: { type: String },
@@ -31,6 +24,6 @@ const ArticlesSchema: Schema = new Schema({
 },
 { versionKey: false });
 
-//#endregion
+
 
 export default mongoose.model<IArticleModel>('Articles', ArticlesSchema);

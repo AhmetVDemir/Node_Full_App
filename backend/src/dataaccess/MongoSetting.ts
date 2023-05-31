@@ -1,13 +1,8 @@
 
-//#region Imports
-
 require('dotenv').config();
 import mongoose from 'mongoose';
 
-//#endregion
 
-
-//#region App
 
 const ConnectionString : string = process.env.CONNECTION_STRING?.toString() || "";
 
@@ -27,7 +22,7 @@ class DbConnection {
     }
 }
 
-//#endregion
+
 
 
 

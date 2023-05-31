@@ -1,11 +1,8 @@
-//#region Imports
+
 import { NextFunction, Request, Response } from "express";
 import UserService from "../services/UsersService";
 
-//#endregion
 
-
-//#region Controller
 
 const AddUser = (req: Request, res: Response) => {
     UserService.AddUser(req.body, (item: any) => {
@@ -25,6 +22,5 @@ const GettAllCustomer = (req:Request,res:Response) => {
     });
 }
 
-//#endregion
 
 export default { AddUser, GettAllCustomer };

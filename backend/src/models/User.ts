@@ -1,13 +1,9 @@
 
-//#region Imports
 
 import mongoose, { Date, Document, Schema } from "mongoose";
 import { Claims, UserStatus } from "./Enums";
 
-//#endregion
 
-
-//#region Model
 
 export interface IUser {
     Name: string
@@ -24,9 +20,7 @@ export interface IUserModel extends IUser, Document {
 
 }
 
-//#endregion
 
-//#region Schema
 
 const UserSchema: Schema = new Schema({
     Name: { type: String, required: true },
@@ -39,6 +33,6 @@ const UserSchema: Schema = new Schema({
 
 }, { versionKey: false });
 
-//#endregion
+
 
 export default mongoose.model<IUserModel>('Users', UserSchema);
